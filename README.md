@@ -5,6 +5,6 @@ Lessons
 - [ ] Create a To do in Markdown
 - [ ] Thematic Music Player
 - [x] 3 songs and 1 sound effect (minimum)
-- [ ] 3 images, minimum
+- [x] 3 images, minimum
 
 ---
