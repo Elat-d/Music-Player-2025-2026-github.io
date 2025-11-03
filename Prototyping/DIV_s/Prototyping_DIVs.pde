@@ -21,3 +21,7 @@ float imageWidth = appWidth * 1/2;
 float imageHeight = appHeight * 1/2;
 //
 rect(imageX, imageY, imageWidth, imageHeight);
+//
+//square(nameX, nameY, nameDimension);
+//line(nameX1,nameY1, nameX2, nameY2);
+//triangle(
