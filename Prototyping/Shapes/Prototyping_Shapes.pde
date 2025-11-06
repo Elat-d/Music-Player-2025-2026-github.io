@@ -47,7 +47,35 @@ float notifyY = appHeight * 0.1/8;
 float notifyWidth = appWidth * 0.5/16;
 float notifyHeight = appHeight * 0.6/8;
 //
-rect(
+rect(notifyX, notifyY, notifyWidth, notifyHeight);
+//
+float menuX = appWidth * 15.1/16;
+float menuY = appHeight * 0.1/8;
+float menuWidth = appWidth * 0.5/16;
+float menuHeight = appHeight * 0.6/8;
+//
+rect(menuX, menuY, menuWidth, menuHeight);
+//
+float trackX = appWidth * 8.8/16;
+float trackY = appHeight * 4.9/8;
+float trackWidth = appWidth * 3.5/16;
+float trackHeight = appHeight * 0.6/8;
+//
+rect(trackX, trackY, trackWidth, trackHeight);
+//
+float nameX = appWidth * 8.8/16;
+float nameY = appHeight * 5.9/8;
+float nameWidth = appWidth * 3.5/16;
+float nameHeight = appHeight * 0.6/8;
+//
+rect(nameX, nameY, nameWidth, nameHeight);
+//
+float isX = appWidth * 8.8/16;
+float isY = appHeight * 6.9/8;
+float isWidth = appWidth * 3.5/16;
+float isHeight = appHeight * 0.6/8;
+//
+rect(isX, isY, isWidth, isHeight);
 //square(nameX, nameY, nameDimension);
 //line(nameX1, nameY1, nameX2, nameY2);
 //triangle(nameX1, nameY1, nameX2, nameY2, nameX3, nameY3);
