@@ -244,7 +244,7 @@ float vinylWidth = appWidth * 3.3/16;
 float vinylHeight = appHeight * 3.3/8;
 //
 rect(vinylX, vinylY, vinylWidth, vinylHeight);
-//
+//  
 
 //square(nameX, nameY, nameDimension);
 //line(nameX1, nameY1, nameX2, nameY2);
