@@ -176,12 +176,76 @@ float addHeight = appHeight * 0.5/8;
 rect(addX, addY, addWidth, addHeight);
 //
 float lineX = appWidth * 0/16;
-float lineY = appHeight * 0.7/8;
+float lineY = appHeight * 5.1/8;
 float lineWidth = appWidth * 7/16;
 float lineHeight = appHeight * 0.5/8;
 //
 rect(lineX, lineY, lineWidth, lineHeight);
 //
+float pauseX = appWidth * 3.15/16;
+float pauseY = appHeight * 5.7/8;
+float pauseWidth = appWidth * 0.7/16;
+float pauseHeight = appHeight * 0.7/8;
+//
+rect(pauseX, pauseY, pauseWidth, pauseHeight);
+//
+float backX = appWidth * 2.30/16;
+float backY = appHeight * 5.8/8;
+float backWidth = appWidth * 0.5/16;
+float backHeight = appHeight * 0.5/8;
+//
+rect(backX, backY, backWidth, backHeight);
+//
+float nextX = appWidth * 4.2/16;
+float nextY = appHeight * 5.8/8;
+float nextWidth = appWidth * 0.5/16;
+float nextHeight = appHeight * 0.5/8;
+//
+rect(nextX, nextY, nextWidth, nextHeight);
+//
+float forX = appWidth * 1.45/16;
+float forY = appHeight * 5.8/8;
+float forWidth = appWidth * 0.5/16;
+float forHeight = appHeight * 0.5/8;
+//
+rect(forX, forY, forWidth, forHeight);
+//
+float wardX = appWidth * 5.05/16;
+float wardY = appHeight * 5.8/8;
+float wardWidth = appWidth * 0.5/16;
+float wardHeight = appHeight * 0.5/8;
+//
+rect(wardX, wardY, wardWidth, wardHeight);
+//
+float loopX = appWidth * 0.6/16;
+float loopY = appHeight * 5.8/8;
+float loopWidth = appWidth * 0.5/16;
+float loopHeight = appHeight * 0.5/8;
+//
+rect(loopX, loopY, loopWidth, loopHeight);
+//
+float shuffleX = appWidth * 5.9/16;
+float shuffleY = appHeight * 5.8/8;
+float shuffleWidth = appWidth * 0.5/16;
+float shuffleHeight = appHeight * 0.5/8;
+//
+rect(shuffleX, shuffleY, shuffleWidth, shuffleHeight);
+//
+float boxX = appWidth * 0.5/16;
+float boxY = appHeight * 0.8/8;
+float boxWidth = appWidth * 6.3/16;
+float boxHeight = appHeight * 3.3/8;
+//
+rect(boxX, boxY, boxWidth, boxHeight);
+//
+float vinylX = appWidth * 1.1/16;
+float vinylY = appHeight * 0.8/8;
+float vinylWidth = appWidth * 3.3/16;
+float vinylHeight = appHeight * 3.3/8;
+//
+rect(vinylX, vinylY, vinylWidth, vinylHeight);
+//
+
 //square(nameX, nameY, nameDimension);
 //line(nameX1, nameY1, nameX2, nameY2);
 //triangle(nameX1, nameY1, nameX2, nameY2, nameX3, nameY3);
