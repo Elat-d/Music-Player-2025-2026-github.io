@@ -245,7 +245,66 @@ float vinylHeight = appHeight * 3.3/8;
 //
 rect(vinylX, vinylY, vinylWidth, vinylHeight);
 //  
+//  
+// Draw pause rectangle
+rect(pauseX, pauseY, pauseWidth, pauseHeight);
 
+// Draw pause icon inside rectangle
+float barWidth = pauseWidth * 0.2;
+float barHeight = pauseHeight * 0.6;
+float barSpacing = pauseWidth * 0.15;
+float bar1X = pauseX + pauseWidth/2 - barWidth - barSpacing/2;
+float bar2X = pauseX + pauseWidth/2 + barSpacing/2;
+float barY = pauseY + (pauseHeight - barHeight)/2;
+
+rect(bar1X, barY, barWidth, barHeight);
+rect(bar2X, barY, barWidth, barHeight);
+//
+// Draw home icon inside home rectangle
+float housePad = min(homeWidth, homeHeight) * 0.18;
+float houseLeft = homeX + housePad;
+float houseRight = homeX + homeWidth - housePad;
+float houseBottom = homeY + homeHeight - housePad;
+float houseRoofPeakX = homeX + homeWidth/2;
+float houseRoofPeakY = homeY + housePad;
+float houseWallTop = homeY + homeHeight * 0.48; // below the roof
+float houseDoorWidth = (houseRight - houseLeft) * 0.25;
+float houseDoorHeight = (houseBottom - houseWallTop) * 0.43;
+
+// Draw roof (triangle)
+stroke(0);
+strokeWeight(2);
+noFill();
+triangle(houseLeft, houseWallTop, houseRight, houseWallTop, houseRoofPeakX, houseRoofPeakY);
+
+// Draw walls (rectangle)
+rect(houseLeft, houseWallTop, houseRight - houseLeft, houseBottom - houseWallTop);
+
+// Draw door (small rectangle, centered)
+float doorX = houseRoofPeakX - houseDoorWidth/2;
+float doorY = houseBottom - houseDoorHeight;
+rect(doorX, doorY, houseDoorWidth, houseDoorHeight);
+
+// Restore stroke weight
+strokeWeight(1);
+//
+// Draw a cross (X) icon inside the exit rectangle
+float crossPad = min(exitWidth, exitHeight) * 0.28; // margin from edges
+float crossLeft = exitX + crossPad;
+float crossRight = exitX + exitWidth - crossPad;
+float crossTop = exitY + crossPad;
+float crossBottom = exitY + exitHeight - crossPad;
+stroke(0);
+strokeWeight(3);
+
+// Diagonal: top-left to bottom-right
+line(crossLeft, crossTop, crossRight, crossBottom);
+// Diagonal: bottom-left to top-right
+line(crossLeft, crossBottom, crossRight, crossTop);
+
+// Restore stroke weight
+strokeWeight(1);
+//
 //square(nameX, nameY, nameDimension);
 //line(nameX1, nameY1, nameX2, nameY2);
 //triangle(nameX1, nameY1, nameX2, nameY2, nameX3, nameY3);
