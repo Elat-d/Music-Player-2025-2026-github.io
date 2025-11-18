@@ -154,12 +154,34 @@ float favouriteHeight = appHeight * 0.5/8;
 //
 rect(favouriteX, favouriteY, favouriteWidth, favouriteHeight);
 //
+//
+// Draw a star icon inside the favourite rectangle
+{
+  float starPad = min(favouriteWidth, favouriteHeight) * 0.20;
+  float starCX = favouriteX + favouriteWidth / 2.0;
+  float starCY = favouriteY + favouriteHeight / 2.0;
+  float starOuter = min(favouriteWidth, favouriteHeight) * 0.33;
+  float starInner = starOuter * 0.43;
+  int nPoints = 5;
+  float angleOffset = -PI/2; // Start point upwards
+  beginShape();
+  for (int i = 0; i < nPoints * 2; i++) {
+    float angle = angleOffset + PI * i / nPoints;
+    float r = (i % 2 == 0) ? starOuter : starInner;
+    float sx = starCX + cos(angle) * r;
+    float sy = starCY + sin(angle) * r;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
 float lyricsX = appWidth * 0/16;
 float lyricsY = appHeight * 2.1/8;
 float lyricsWidth = appWidth * 0.4/16;
 float lyricsHeight = appHeight * 0.5/8;
 //
 rect(lyricsX, lyricsY, lyricsWidth, lyricsHeight);
+//
+
 //
 float likeX = appWidth * 6.2/16;
 float likeY = appHeight * 4.2/8;
@@ -305,6 +327,8 @@ line(crossLeft, crossBottom, crossRight, crossTop);
 // Restore stroke weight
 strokeWeight(1);
 //
+//
+
 //square(nameX, nameY, nameDimension);
 //line(nameX1, nameY1, nameX2, nameY2);
 //triangle(nameX1, nameY1, nameX2, nameY2, nameX3, nameY3);
