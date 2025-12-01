@@ -1,10 +1,10 @@
-/* Aspect Ratio: Art Only Demonstration
- - Art
+/* Aspect Ratio: People Only Demonstration
+ - People
  */
 //
 //Display
 //fullScreen(); //Landscape
-size(600, 600); 
+size(500, 250); //Portrait, testing smaller DIVs ONLY
 int appWidth = width; //displayWidth
 int appHeight = height; //displayHeight
 //println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight);
@@ -16,12 +16,14 @@ float imageDivY = appHeight*1/10;
 float imageDivWidth = appWidth*1/2;
 float imageDivHeight = appHeight*1/5; //4/5  
 //
+//Image Aspect Ratio Vars & Algorithm
+//Directory or Pathway, Concatenation
 String upArrow = "../../";
-String folder = "Image";
+String folder = "Images/";
 String People = "People";
 String fileExtensionJPG = ".jpg";
 String imagePathway1 = upArrow + folder + People + fileExtensionJPG;
-//println("Art Pathway:", imagePathway1);
+//println("People Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
 //
 PImage errorImage = loadImage( "errorimage.png" );
@@ -32,8 +34,8 @@ if ( image1 == null ) {
   exit();
 }
 //
-int imageWidth1 = 1600; 
-int imageHeight1 = 1600; 
+int imageWidth1 = 1200; 
+int imageHeight1 = 630; 
 //Aspect Ratio
 float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; 
 //println("Testing for Decimals, formula unsing ints:", imageWidth1/imageHeight1);
