@@ -1,5 +1,5 @@
-/* Aspect Ratio: People Only Demonstration
- - People
+/* Aspect Ratio: Tomato Only Demonstration
+ - Tomato
  */
 //
 //Display
@@ -20,10 +20,10 @@ float imageDivHeight = appHeight*1/5; //4/5
 //Directory or Pathway, Concatenation
 String upArrow = "../../";
 String folder = "Images/";
-String People = "People";
+String Tomato = "Tomato";
 String fileExtensionJPG = ".jpg";
-String imagePathway1 = upArrow + folder + People + fileExtensionJPG;
-//println("People Pathway:", imagePathway1);
+String imagePathway1 = upArrow + folder + Tomato + fileExtensionJPG;
+//println("Tomato Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
 //
 PImage errorImage = loadImage( "errorimage.png" );
@@ -34,8 +34,8 @@ if ( image1 == null ) {
   exit();
 }
 //
-int imageWidth1 = 1200; 
-int imageHeight1 = 630; 
+int imageWidth1 = 1024; 
+int imageHeight1 = 691; 
 //Aspect Ratio
 float image1AspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; 
 //println("Testing for Decimals, formula unsing ints:", imageWidth1/imageHeight1);
@@ -77,6 +77,7 @@ if ( imageHeightAdjusted1 > imageDivHeight ) {
   } //End WHILE Error Check, Counting Up
   //
 } //END IF
+println("Inspection of percent dcrease:", imageWidthAdjusted1, imageHeightAdjusted1, imageDivHeight);
 //
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
