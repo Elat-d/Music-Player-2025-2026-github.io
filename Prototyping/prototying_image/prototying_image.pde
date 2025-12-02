@@ -1,5 +1,5 @@
-/* Aspect Ratio: Tomato Only Demonstration
- - Tomato
+/* Aspect Ratio: japan Only Demonstration
+ - japan
  */
 //
 //Display
@@ -11,18 +11,18 @@ int appHeight = height; //displayHeight
 //println("\t\t\t\tFullScreen, displayWidth:\t"+displayWidth, "\tdisplayHeight:\t"+displayHeight, "\n\t\t\t\tSize\t, width:\t\t"+width, "\theight:\t\t"+height);
 //
 //Population
-float imageDivX = appWidth*1/4;
-float imageDivY = appHeight*1/10;
-float imageDivWidth = appWidth*1/2;
-float imageDivHeight = appHeight*1/5; //4/5  
+float imageDivX = appWidth*1/8;
+float imageDivY = appHeight*1/8;
+float imageDivWidth = appWidth*3/4;
+float imageDivHeight = appHeight*4/5; //4/5  
 //
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
 String upArrow = "../../";
 String folder = "Images/";
-String Tomato = "Tomato";
+String japan = "japan";
 String fileExtensionJPG = ".jpg";
-String imagePathway1 = upArrow + folder + Tomato + fileExtensionJPG;
+String imagePathway1 = upArrow + folder + japan + fileExtensionJPG;
 //println("Tomato Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
 //
@@ -58,7 +58,7 @@ if ( imageHeightAdjusted1 > imageDivHeight ) {
       imageHeightAdjusted1=imageDivHeight;
     } //End Check Infinite loop
     //Image Adjustment Percent v Pixel
-    imageWidthAdjusted1 *= 0.70; // -= 1
+    imageWidthAdjusted1 *= 0.90; // -= 1
     imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
     println("Inspection of percent decrase:", imageWidthAdjusted1, imageHeightAdjusted1, imageDivHeight);
   } //End While
