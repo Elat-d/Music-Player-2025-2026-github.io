@@ -44,7 +44,11 @@ rect( stringDivX, stringDivY, stringDivWidth, stringDivHeight );
 fontsize= 81;
 //
 color redInk = #861313; //Hexidecimal
+color whiteInk = #FFFFFF;
+color resetInk = whiteInk;
 fill(redInk); //Ink, Grey Scale 0-255
+textAlign (CENTER, CENTER);
+//Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
 textFont(titleFont, fontsize); //see variable note
 //textFont() has option to combine font declation with textSize()
 //
