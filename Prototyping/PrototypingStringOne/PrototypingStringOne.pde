@@ -12,7 +12,7 @@ int appHeight = displayHeight; //height
 //Population
 float stringDivX = appWidth*1/4; 
 float stringDivY = appHeight*1/10;
-float stringDivWidth = appWidth*1/2;
+float stringDivWidth = appWidth*0.5/2;
 float stringDivHeight = appHeight*1/10; // ** Make smaller to test height
 //
 //Strings, Text, Literal
@@ -27,17 +27,25 @@ String[] fontList = PFont.list(); //To list all fonts available on system
  printArray(fontList); //For listing all possible fonts to choose, then createFont
  */
 //
-float fontsize = 28;
+float fontsize = appHeight;
 PFont titleFont;
 String gabriola = "Gabriola";
 titleFont = createFont(gabriola, fontsize);
 //Tools /Crreat Font / Find Font / Do Not Press "OK", known conflict between loadFont
 //
-rect( stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+println(fontsize, gabriola, titleFont);
+println("fontsize:", fontsize);
 //
-color blackInk = #000003; //Hexidecimal
-fill(blackInk); //Ink, Grey Scale 0-255
-textFont(titleFont, fontSize); //see variable note
+float gabriolaAspectRatio = fontsize / stringDivHeight;
+fontsize = stringDivHeight*gabriolaAspectRatio;
+println("Gabriola Aspect Ratio:", gabriolaAspectRatio);
+println(); 
+rect( stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+fontsize= 81;
+//
+color redInk = #861313; //Hexidecimal
+fill(redInk); //Ink, Grey Scale 0-255
+textFont(titleFont, fontsize); //see variable note
 //textFont() has option to combine font declation with textSize()
 //
 text( title, stringDivX, stringDivY, stringDivWidth, stringDivHeight );
