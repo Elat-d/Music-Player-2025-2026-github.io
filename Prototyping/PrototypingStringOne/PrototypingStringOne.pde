@@ -49,7 +49,15 @@ color resetInk = whiteInk;
 fill(redInk); //Ink, Grey Scale 0-255
 textAlign (CENTER, CENTER);
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+//
 textFont(titleFont, fontsize); //see variable note
+float constantDecrease = 0.99;
+while ( textWidth(title) > stringDivWidth ) {
+ //ERROR: infinite loop, reuires exit() & println()
+ fontsize *= constantDecrease;// Assignmaen Operator // fontsize = fontsize*0.99
+  textFont(titleFont, fontsize); //see variable note
+}
 //textFont() has option to combine font declation with textSize()
 //
 text( title, stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+fill(resetInk);
