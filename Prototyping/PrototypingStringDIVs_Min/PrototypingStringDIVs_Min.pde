@@ -62,27 +62,26 @@ text[6] = "track name";
 text[7] = "track name";
 text[8] = "track name";
 text[9] = "artist name";
-// Students enter all text from Case Study
 //
 //Font Loading & Aspect Ratio
 float fontSize = appHeight;
 PFont titleFont;
-String harrington = "Harrington";
-titleFont = createFont(harrington, fontSize);
-float fontSizeHarrington = 83.0;
-float divHeightHarrington = stringDivHeight[0];
-float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington;
-fontSize = stringDivHeight[0]*harringtonAspectRatio; 
+String gabriola = "Gabriola";
+titleFont = createFont(gabriola, fontSize);
+float fontSizeGabriola = 70.0;
+float divHeightGabriola = stringDivHeight[0];
+float gabriolaAspectRatio = fontSizeGabriola / divHeightGabriola;
+fontSize = stringDivHeight[0]*gabriolaAspectRatio; 
 //
 for ( int i=0; i<numberOfDIVs; i++ ) {
   rect( stringDivX[i], stringDivY[i], stringDivWidth[i], stringDivHeight[i] );
 } //End FOR DIVs
 //
 //Drawing Text
-color purpleInk = #2C08FF; //AP MiniLesson on bit, 8-bit or byte (grey scale, 256), colour
+color blueInk = #1D0EAA; 
 color whiteInk = #FFFFFF; //Grey Scale is 255
 color resetInk = whiteInk;
-fill(purpleInk);
+fill(blueInk);
 textAlign (CENTER, CENTER);
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
 textFont(titleFont, fontSize); 
