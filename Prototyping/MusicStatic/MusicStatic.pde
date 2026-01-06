@@ -18,3 +18,37 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+//Global Varables
+Minim minim; //initates entire class 
+int numberOfSongs = 1; //Best practice
+int numberOfSoundEffects = 1; //Bestpractice
+AudioPlayer[] playlist = new AudioPlayer[numberOfSongs];
+AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
+int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
+//
+//Display
+size(700,500); //width //height
+//fullScreen(); //displayWidth //displayHeight
+int appWidth =width;
+int appHeight =height;
+//
+//Music Loading - STRUCTURE Review
+minim = new Minim(this);
+String upArrow= "../../";
+String musicFolder = "Music";
+String songFolder = "Song";
+String songName1 ="By Myself";
+String fileExtension_mp3 =".mp3";
+//
+String musicDirectory = upArrow + musicFolder + songFolder; //Concatenation
+String file = musicDirectory + songName1 + fileExtension_mp3;
+println("Music Pathway", musicDirectory);
+println("Full Music File Pathway", file);
+
+playlist[currentSong] = minim.loadFile(file); 
+//
+if ( playlist[currentSong]==null ) { //ERROR, play list is NULL
+  println("Did the music and sound load properly");
+  printArray(playlist);
+}
+//Deal with Null
