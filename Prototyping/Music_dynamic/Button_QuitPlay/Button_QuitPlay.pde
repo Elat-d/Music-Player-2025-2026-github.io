@@ -17,6 +17,10 @@ int appWidth, appHeight;
 float quitDivX, quitDivY, quitDivWidth, quitDivHeight;
 float playDivX, playDivY, playDivWidth, playDivHeight;
 float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
+// 
+Boolean playButton = false;
+//
+color resetBackground, resetInk;
 //
 void setup() {
   //Display
@@ -44,7 +48,23 @@ void setup() {
   rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
   rect(playDivX, playDivY, playDivWidth, playDivHeight);
   triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
-} //End setup
+  //
+ //Color Population
+ color black =0; //Gray Scale , mush smaller color, 256 bits
+ color white =0; //Gray Scale
+ //CANVAS: default background and ink
+ resetBackground = white;
+ resetInk = black;
+ //button Colours
+ color
+ 
+ color brown = #2E0F14;
+ color blue = #5FB3E5;
+ color black =#050303;
+ color gray =#5F5A5B;
+ playColourBackground=
+ playColourSymbol=
+ playColour
 //
 void draw() {
  //plintln ("My mouse is", mouseX, mouseY);
