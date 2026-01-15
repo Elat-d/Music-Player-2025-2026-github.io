@@ -60,7 +60,7 @@ void setup() {
   //Button Colours
   color brown = #2E0F14;
   color blue = #5FB3E5;
-  color black =#050303;
+  color navy = #120783;
   color grayScale= 256/2;
   color gray =#5F5A5B;
   playColourBackground = brown;
@@ -68,8 +68,8 @@ void setup() {
   playColourBackgroundActivated = blue;
   playColourSymbolActivated = brown;
   quitBackground = white;
-  quitBackgroundActivated = red;
-    //
+  quitBackgroundActivated = navy;
+  //
 } //End setup
 //
 void draw() {

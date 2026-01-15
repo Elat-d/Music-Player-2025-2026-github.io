@@ -1,0 +1,5 @@
+void colourPopulation(){
+  nightModeVariables();
+  buildingColours();
+}
+//
