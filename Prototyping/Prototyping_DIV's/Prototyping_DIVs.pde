@@ -1,11 +1,3 @@
-/* DIVs 2D Rectangles
-- Step One: nameing the rectangles by referencing the variables
-- Writing a computer program backwards from an object
-
-Future Steps
-- Step Two: developing the Display CANVAS & the Ternary Operator
-- Step Three: populating variables (local v global and type)
-*/
 //
 //Display CANVAS
 //size(); //width //height

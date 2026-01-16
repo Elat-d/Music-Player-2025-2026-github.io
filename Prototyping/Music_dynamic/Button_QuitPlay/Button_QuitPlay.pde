@@ -113,7 +113,7 @@ void draw() {
     fill(resetBackground);
     fill(quitButtonInk);
     //
-   text("X", quitDivX+quitDivWidth*1/2, quitDivY+quitDivHeight*3/5);
+    text("X", quitDivX+quitDivWidth*1/2, quitDivY+quitDivHeight*3/5);
     fill(resetInk);
   } else {
     fill(quitBackground);
@@ -121,7 +121,7 @@ void draw() {
     fill(resetBackground);
     fill(quitButtonInk);
     //
-    text("X", quitDivX+quitDivWidth*1/2, quitDivY+quitDivHeight*3/5); 
+    text("X", quitDivX+quitDivWidth*1/2, quitDivY+quitDivHeight*3/5);
     fill(resetInk);
   }//End Quit Button Hover Over
   //
@@ -139,6 +139,20 @@ void mousePressed() {
 } //End Mouse Pressed
 //
 void keyPressed() {
+  //Note, CAPs Lock on Code: key=='[CAP]' || key=='[lowerCase]'
+  //CAUTION: Order Matters 
+  if (key=='Q' || key=='q') {
+    quitButton();
+  } //Quit Button
 } //End Key Pressed
+//
+void quitButton() {
+  noLoop(); //Adjusts the exit of the program using finishing draw()
+  exit(); //With noLoop(), exit happens here
+  println("Final Line of mousePressed and finishes draw()");
+}//End Quit Button
+//
+void nightModeButton() {
+}//End Night Mode Button
 //
 //End MAIN Program
