@@ -1,5 +1,1 @@
-void colourPopulation(){
-  nightModeVariables();
-  buildingColours();
-}
-//
+

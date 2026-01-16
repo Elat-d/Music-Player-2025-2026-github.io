@@ -1,15 +1,4 @@
-/* Creating Buttons
- - Understanding how the mixing of boilerplate happens
- - Introducing Booleans to communicate between procedures, 1 bite of information
- 
- - Specific Debugging Topics
- - MouseX & Y keyVariables
- 
- - What to copy and paste
- - Quit & Play DIV
- 
- */
-//
+
 //Library - Minim
 //
 //Global Variables
@@ -18,16 +7,17 @@ float quitDivX, quitDivY, quitDivWidth, quitDivHeight;
 float playDivX, playDivY, playDivWidth, playDivHeight;
 float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
 //
-Boolean playButton=false;
+Boolean playButton=false, quitButton=false;
 //
-color resetBackground, resetInk;
+color resetBackground, resetInk, resetBackgroundDay, resetInkDay, resetBackgroundNight, resetInkNight;
+color quitButtonInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 color quitBackground, quitBackgroundActivated;
+Boolean nightMode=false;
 //
 void setup() {
   //Display
   size(500, 400);
-  //fullScreen();
   appWidth = width;
   appHeight = height;
   //
@@ -46,29 +36,54 @@ void setup() {
   playSymbolY2 = playDivY + playDivHeight * 1/2;
   playSymbolX3 = playSymbolX1;
   playSymbolY3 = playDivY + playDivHeight * 3/4;
+  //
   //DIVs
   rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
   rect(playDivX, playDivY, playDivWidth, playDivHeight);
   triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
   //
   //Colour Population
-  color black = 0; //Gray Scale, much smaller color, 256 bits
+  nightMode=false;
+  color black = 0; //Gray Scale, 256 bits
   color white = 255; //Gray Scale
-  //CANVAS: default background and ink
-  resetBackground = white;
-  resetInk = black;
-  //Button Colours
+  color grayScale = 256/2;
+  color gray = #B9B9B9;
+  //
+  resetBackgroundDay = white;
+  resetInkDay = black;
+  resetBackgroundNight = 256/4;
+  resetInkNight = int(256*0.75); // 3/4 of origoinal, not 1/4
+  //println("Casting answer is:", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
+  //
   color brown = #2E0F14;
   color blue = #5FB3E5;
   color navy = #120783;
-  color grayScale= 256/2;
-  color gray =#5F5A5B;
-  playColourBackground = brown;
-  playColourSymbol = blue;
-  playColourBackgroundActivated = blue;
-  playColourSymbolActivated = brown;
-  quitBackground = white;
-  quitBackgroundActivated = navy;
+  color darkGray = grayScale;
+  color ligthGray = gray;
+  //
+  if ( nightMode == true ) {
+    resetBackground = resetBackgroundNight;
+    resetInk = resetInkNight;
+    playColourBackground = darkGray;
+    playColourSymbol = ligthGray;
+    playColourBackgroundActivated = ligthGray;
+    playColourSymbolActivated = darkGray;
+    quitBackground = ligthGray;
+    quitBackgroundActivated = brown;
+    quitButtonInk = darkGray;
+  } else
+  {
+    //
+    resetBackground = resetBackgroundDay;
+    resetInk = black;
+    playColourBackground = brown;
+    playColourSymbol = blue;
+    playColourBackgroundActivated = blue;
+    playColourSymbolActivated = brown;
+    quitBackground = white;
+    quitBackgroundActivated = navy;
+    quitButtonInk = black;
+  } //End Night Mode Colors
   //
 } //End setup
 //
@@ -76,7 +91,7 @@ void draw() {
   //println ("My Mouse is", mouseX, mouseY);
   //Button HoverOver
   if ( mouseX>playDivX && mouseX<playDivX+playDivWidth && mouseY>playDivY && mouseY<playDivY+playDivHeight ) {
-    println("i like minions");
+    //println("I like Minions");
     playButton = true;
     fill(playColourBackgroundActivated);
     rect(playDivX, playDivY, playDivWidth, playDivHeight);
@@ -84,7 +99,7 @@ void draw() {
     triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
     fill(resetBackground);
   } else {
-    print(" ");
+    //print(" ");
     playButton = false;
     fill(playColourBackground);
     rect(playDivX, playDivY, playDivWidth, playDivHeight);
@@ -96,19 +111,28 @@ void draw() {
     fill(quitBackgroundActivated);
     rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
     fill(resetBackground);
+    fill(quitButtonInk);
+    //
+   text("X", quitDivX+quitDivWidth*1/2, quitDivY+quitDivHeight*3/5);
+    fill(resetInk);
   } else {
     fill(quitBackground);
     rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
     fill(resetBackground);
+    fill(quitButtonInk);
+    //
+    text("X", quitDivX+quitDivWidth*1/2, quitDivY+quitDivHeight*3/5); 
+    fill(resetInk);
   }//End Quit Button Hover Over
   //
 } //End draw
 //
 void mousePressed() {
+  //
   //Music Play Functions
   if ( playButton == true ) {
-    println("Play My Song");
-    playButton=false; //reset Boolean for draw()
+    println("i like minions");
+    playButton=false;
   } else {
     println(" ");
   }
