@@ -2,6 +2,9 @@
  - TBA
  */
 //
+float stringDivX, stringDivY, stringDivWidth, stringDivHeight;
+color resetBlackink, resetWhiteInk,  brownInk;
+//
 void divPopulation() {
   quitDivX = appWidth * 9/10;
   quitDivY = appHeight * 0/10;
@@ -45,19 +48,19 @@ void colourPopulation() {
     playColourBackgroundActivated = ligthGray;
     playColourSymbolActivated = darkGray;
     quitBackground = ligthGray;
-    quitBackgroundActivated = red;
+    quitBackgroundActivated = navy;
     quitButtonInk = darkGray;
   } else
   {
     //
     resetBackground = resetBackgroundDay;
     resetInk = black;
-    playColourBackground = purple;
-    playColourSymbol = yellow;
-    playColourBackgroundActivated = yellow;
-    playColourSymbolActivated = purple;
+    playColourBackground = brown;
+    playColourSymbol = blue;
+    playColourBackgroundActivated = blue;
+    playColourSymbolActivated = brown;
     quitBackground = white;
-    quitBackgroundActivated = red;
+    quitBackgroundActivated = navy;
     quitButtonInk = black;
   } //End Night Mode Colors
 } //End Colour Population

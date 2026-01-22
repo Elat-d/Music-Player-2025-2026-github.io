@@ -11,11 +11,16 @@ void quitButton() {
 void DIVs() {
   quitDIV();
   playDIV();
+  titleDIV();
 } //End DIVs
 //
 void quitDIV() {
   rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
 } // End Quit Button DIV
+//
+void titleDIV() {
+  rect( stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+} //End Title DIV
 //
 void playDIV() {
   rect(playDivX, playDivY, playDivWidth, playDivHeight);
