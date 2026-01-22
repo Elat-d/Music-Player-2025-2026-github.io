@@ -30,7 +30,23 @@ void textdraw() {
   fill(brownInk); 
   textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-  textFont(titleFont, fontSize); //see variable note
+  textFont(titleFont, fontSize);
+  
+  
+  //ERRORs
+  
+  
+   float constantDecrease = 0.99;
+int iWhile=0;
+while ( textWidth( playListMetaData[currentSong].title() ) > stringDivWidth ) {
+  iWhile++;
+  //ERROR: infinite loop, requires exit() & println()
+  fontSize *= constantDecrease;
+  textFont(titleFont, fontSize);
+} //End WHILE Error Check Text-wrap
+//println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", stringDivWidth-textWidth( playListMetaData[currentSong].title() ), "\tUsing", constantDecrease*100+"%" );
+text( playListMetaData[currentSong].title(), stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+fill(resetInk);
 } //End Text Draw
 //
-//End Subprogram Text
+//End Subprogram Tex
