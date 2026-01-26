@@ -3,7 +3,7 @@
  */
 //
 float stringDivX, stringDivY, stringDivWidth, stringDivHeight;
-color resetBlackink, resetWhiteInk,  brownInk;
+color resetBlackInk, resetWhiteInk, brownInk; // fixed capitalization and spacing
 //
 void divPopulation() {
   quitDivX = appWidth * 0/16;
@@ -24,31 +24,32 @@ void divPopulation() {
 } //End DIV Population
 //
 void colourPopulation() {
-  color black = 0; //Gray Scales
-  color white = 255; 
-  color grayScale = 256/2; 
+  // Gray scales and named colors
+  color black = color(0);
+  color white = color(255);
+  color grayScale = color(128); // 256/2
   color gray = #B9B9B9;
-  //CANVAS: default background and ink
+  // CANVAS: default background and ink
   resetBackgroundDay = white;
   resetInkDay = black;
-  resetBackgroundNight = 256/4;
-  resetInkNight = int(256*0.75); // 3/4 of origoinal, not 1/4
-  //println("Casting answer is:", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
+  resetBackgroundNight = color(256/4); // 64
+  resetInkNight = color(int(256*0.75)); // 192
+  //println("Casting answer is:", resetInkNight); //Exactly 192, no rounding involved, checked on calculator
   //
   color brown = #2E0F14;
   color blue = #5FB3E5;
   color navy = #120783;
   color darkGray = grayScale;
-  color ligthGray = gray;
+  color lightGray = gray; // corrected spelling from 'ligthGray'
   //
   if ( nightMode == true ) {
     resetBackground = resetBackgroundNight;
     resetInk = resetInkNight;
     playColourBackground = darkGray;
-    playColourSymbol = ligthGray;
-    playColourBackgroundActivated = ligthGray;
+    playColourSymbol = lightGray;
+    playColourBackgroundActivated = lightGray;
     playColourSymbolActivated = darkGray;
-    quitBackground = ligthGray;
+    quitBackground = lightGray;
     quitBackgroundActivated = navy;
     quitButtonInk = darkGray;
   } else
