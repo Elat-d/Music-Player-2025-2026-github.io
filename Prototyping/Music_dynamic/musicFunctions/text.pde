@@ -1,6 +1,12 @@
-/* Text
- - TBA
+/*Text
+ -TBA
  */
+//
+void drawText() {
+  textdraw();
+  songTitle();
+  //
+} // End Draw Text
 //
 void easyTextQuitButton() {
   //
@@ -8,45 +14,45 @@ void easyTextQuitButton() {
 } //End Easy Text
 //
 void textSetup() {
-  /*Fonts from OS
-   println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
-   String[] fontList = PFont.list(); //To list all fonts available on system
-   printArray(fontList); //For listing all possible fonts to choose, then createFont
-   //Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
-   //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
-   */
+  //println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+  //
   float fontSize = appHeight;
   PFont titleFont;
   String gabriola = "Gabriola";
   titleFont = createFont(gabriola, fontSize);
   //
-  float fontSizeGabriola = 83.0;
+  float fontSizeGabriola = 80.0;
   float gabriolaAspectRatio = fontSizeGabriola / stringDivHeight;
   fontSize = stringDivHeight*gabriolaAspectRatio;
   //
 } //End Text Setup
 //
 void textdraw() {
-  fill(brownInk); 
-  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  fill(brownInk);
+  textAlign (CENTER, CENTER); 
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
   textFont(titleFont, fontSize);
-  
-  
-  //ERRORs
-  
-  
-   float constantDecrease = 0.99;
-int iWhile=0;
-while ( textWidth( playListMetaData[currentSong].title() ) > stringDivWidth ) {
-  iWhile++;
-  //ERROR: infinite loop, requires exit() & println()
-  fontSize *= constantDecrease;
-  textFont(titleFont, fontSize);
-} //End WHILE Error Check Text-wrap
-//println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", stringDivWidth-textWidth( playListMetaData[currentSong].title() ), "\tUsing", constantDecrease*100+"%" );
-text( playListMetaData[currentSong].title(), stringDivX, stringDivY, stringDivWidth, stringDivHeight );
-fill(resetInk);
+  //
+  float constantDecrease = 0.85;
+  int iWhile=0;
+  while ( textWidth( playListMetaData[currentSong].title() ) > stringDivWidth ) {
+    iWhile++;
+    //
+    fontSize *= constantDecrease;
+    textFont(titleFont, fontSize);
+  } //
+  //println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", stringDivWidth-textWidth( playListMetaData[currentSong].title() ), "\tUsing", constantDecrease*100+"%" );
+  text( playListMetaData[currentSong].title(), stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+  fill(resetInk);
 } //End Text Draw
+
+//
+void songTitle() {
+  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  fill(titleInk); //Ink, hexidecimal copied from Color Selector
+  text( songTitle, stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+  fill(resetInk);
+} //End Song Title
 //
 //End Subprogram Tex

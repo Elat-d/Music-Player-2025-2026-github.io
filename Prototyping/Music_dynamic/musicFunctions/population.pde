@@ -6,20 +6,21 @@ float stringDivX, stringDivY, stringDivWidth, stringDivHeight;
 color resetBlackink, resetWhiteInk,  brownInk;
 //
 void divPopulation() {
-  quitDivX = appWidth * 9/10;
-  quitDivY = appHeight * 0/10;
-  quitDivWidth = appWidth * 1/10;
-  quitDivHeight = appHeight * 1/10;
-  playDivX = appWidth * 4/10;
-  playDivY = appHeight * 4.5/10;
-  playDivWidth = appWidth * 2/10;
-  playDivHeight = appHeight * 1/10;
+  quitDivX = appWidth * 0/16;
+  quitDivY = appHeight * 0/8;
+  quitDivWidth = appWidth * 0.4/16;
+  quitDivHeight = appHeight * 0.5/8;
+  playDivX = appWidth * 3.15/16;
+  playDivY = appHeight * 5.7/8;
+  playDivWidth = appWidth * 0.7/16;
+  playDivHeight = appHeight * 0.7/8;
   playSymbolX1 = playDivX + playDivWidth * 1/4;
   playSymbolY1 = playDivY + playDivHeight * 1/4;
   playSymbolX2 = playSymbolX1 + playDivWidth * 1/2;
   playSymbolY2 = playDivY + playDivHeight * 1/2;
   playSymbolX3 = playSymbolX1;
   playSymbolY3 = playDivY + playDivHeight * 3/4;
+  // 
 } //End DIV Population
 //
 void colourPopulation() {
